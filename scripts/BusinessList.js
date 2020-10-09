@@ -1,7 +1,11 @@
 import { useBusinesses } from "./BusinessProvider.js"
 import { businessHtml } from "./Business.js"
+import {nyBusinesses} from "./BusinessProvider.js"
+
+debugger
 
 const contentContainer = document.querySelector(".business__list")
+const nyContainer = document.querySelector(".businessList--newYork")
 
 
 
@@ -16,6 +20,14 @@ export const PopulateList = () => {
     );
 }
 
+export const ListNewYork = () => {
+    const newYorkArr = nyBusinesses
+    nyContainer.innerHTML = "<h2>New York Businesses</h2>"
+
+    newYorkArr.forEach((newYorkComp) => {
+        nyContainer.innerHTML += businessHtml(newYorkComp)
+    })
+}
 
 
 
