@@ -1,11 +1,11 @@
-import { useBusinesses } from "./BusinessProvider.js"
+import { listingAgents, useBusinesses } from "./BusinessProvider.js"
 import { businessHtml } from "./Business.js"
 import {nyBusinesses} from "./BusinessProvider.js"
-
-debugger
+import {AgentHtml} from "./Agent.js"
 
 const contentContainer = document.querySelector(".business__list")
 const nyContainer = document.querySelector(".businessList--newYork")
+const agentContainer = document.querySelector(".agents")
 
 
 
@@ -26,6 +26,15 @@ export const ListNewYork = () => {
 
     newYorkArr.forEach((newYorkComp) => {
         nyContainer.innerHTML += businessHtml(newYorkComp)
+    })
+}
+
+export const ListAgents = () => {
+    const agentsList = listingAgents
+    agentContainer.innerHTML = "<h2>Purchasing Agents</h2>"
+
+    agentsList.forEach((agent) => {
+        agentContainer.innerHTML += AgentHtml(agent)
     })
 }
 

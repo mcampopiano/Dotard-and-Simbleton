@@ -121,3 +121,12 @@ const businesses = [
     }
     return false
   })
+
+  export const listingAgents = businesses.map(entry => {
+    return {
+      purchasingAgent: entry.purchasingAgent,
+      companyName: entry.companyName,
+      phoneWork: entry.phoneWork
+    }
+    
+  })
