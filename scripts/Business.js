@@ -1,3 +1,4 @@
+// creates HTML for the DOM
 export const businessHtml = (compObj) => {
     return `
     <h3>${compObj.companyName}</h3>
