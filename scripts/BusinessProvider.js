@@ -150,23 +150,22 @@ document
               business.companyName.includes(keyPressEvent.target.value)
       */
 
-      const foundBusiness = businesses.find(compObj => {
-        if (compObj.companyName.includes(keyPressEvent.target.value))
+      const foundAgent = businesses.find(compObj => {
+        if (compObj.purchasingAgent.nameFirst.includes(keyPressEvent.target.value) || compObj.purchasingAgent.nameLast.includes(keyPressEvent.target.value))
         return compObj
       })// implement .find() method here
 
       companySearchResultArticle.innerHTML = `
                 <h2>
-                ${foundBusiness.companyName}
+                ${foundAgent.purchasingAgent.nameFirst}
+                ${foundAgent.purchasingAgent.nameLast}
                 </h2>
                 <section>
-                ${foundBusiness.addressFullStreet}
+                ${foundAgent.companyName}
 
                 </section>
                 <section>
-                ${foundBusiness.addressCity},
-                ${foundBusiness.addressStateCode}
-                ${foundBusiness.addressZipCode}
+                ${foundAgent.phoneWork},
                 </section>
             `;
     }
