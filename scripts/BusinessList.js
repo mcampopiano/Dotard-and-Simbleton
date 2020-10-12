@@ -12,7 +12,7 @@ const agentContainer = document.querySelector(".agents")
 export const PopulateList = () => {
     const businessArr = useBusinesses()
     contentContainer.innerHTML = "<h1>Active Businesses</h1>"
-
+// iterates through the businessArr array, and for each item (compObj) it performs the task
     businessArr.forEach((compObj) => {
         contentContainer.innerHTML += businessHtml(compObj)
     }
